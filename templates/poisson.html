@@ -5,10 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poisson Distribution</title>
     <style>
-        label, input {
+        body {
+            background-color: blanchedalmond;
+        }
+
+        h1 {
+            color: red;
+            text-align: center;
+        }
+
+        form, label, select, input {
             display: block;
             margin-bottom: 10px;
+            color: green;
+            text-align: center;
+            margin: 0 auto;
         }
+
     </style>
 </head>
 <body>
@@ -17,7 +30,7 @@
         <label for="x">X value (number of events):</label>
         <input type="text" id="x" name="x">
 
-        <label for="lambda">Rate parameter (λ):</label>
+        <label for="lambda">Lambda (λ):</label>
         <input type="text" id="lambda" name="lambda">
 
         <input type="submit" value="Calculate">
