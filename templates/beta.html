@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beta Distribution</title>
+    <style>
+        label, select, input {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Beta Distribution Parameters</h1>
+    <form action="{{ url_for('beta') }}" method="post">
+        <label for="x">X value:</label>
+        <input type="text" id="x" name="x">
+
+        <label for="alpha">Alpha parameter:</label>
+        <input type="text" id="alpha" name="alpha">
+
+        <label for="beta">Beta parameter:</label>
+        <input type="text" id="beta" name="beta">
+
+        <input type="submit" value="Calculate">
+    </form>
+</body>
+</html>

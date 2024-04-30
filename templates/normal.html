@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normal Distribution</title>
+    <style>
+        label, select, input {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Normal Distribution Parameters</h1>
+    <form action="{{ url_for('normal') }}" method="post">
+        <label for="x">X value:</label>
+        <input type="text" id="x" name="x">
+
+        <label for="mean">Mean:</label>
+        <input type="text" id="mean" name="mean">
+
+        <label for="std_dev">Standard Deviation:</label>
+        <input type="text" id="std_dev" name="std_dev">
+
+        <input type="submit" value="Calculate">
+    </form>
+</body>
+</html>

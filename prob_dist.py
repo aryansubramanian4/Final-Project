@@ -5,7 +5,7 @@ import numpy as np
 ### Citations ###
 # https://docs.scipy.org/doc/scipy/reference/stats.html
 # https://www.techladder.in/article/pmf-pdf-and-cdf-and-its-implementation-python
-# https://www.geeksforgeeks.org/args-kwargs-python/ 
+# https://www.geeksforgeeks.org/args-kwargs-python/
 
 def distribution_type():
     """
@@ -101,9 +101,9 @@ def dist_parameters(distribution_type):
 
 def calculate_prob(distribution_type, choice, x, *parameters): 
     """
-    This function conducts the calculation based on the selected distributions and its relevant parameters from the functions above. It then outputs the relevant information regarding the x-value inputted.
+    This function conducts the calculation based on the selected distributions and accepts several relevant parameters from the functions above. It stores the different values into a dictionary and allows the function to accept any number of arguments and is received into the function as a tuple. It then outputs the relevant information based on the user choice,
 
-    For example: If the user selected a discrete binomial distribution and wanted to see what the probability of them making in 5 (x-value) basketball free throws from 8 (n) attempts, with the probability any free throw going in at 0.75. The output would tell you that the probability of making in exactly 5 shots is 0.2076, less than 5 shots is 0.1138, and more than 5 shots is 0.6785
+    For example: If the user selected a discrete binomial distribution and wanted to see what the probability of them making in 5 (x-value) basketball free throws from 8 (n) attempts, with the probability any free throw going in at 0.75. The output would tell you that the probability of making in exactly 5 shots is 0.2076, less than 5 shots is 0.3215, and more than 5 shots is 0.6785
 
     Note: Continuous distributions don't have an P(X = x) as there is no significance in this value.
     """
@@ -122,8 +122,8 @@ def calculate_prob(distribution_type, choice, x, *parameters):
             results['P(X > x)'] = 1 - stats.gamma.cdf(x, shape, scale)
         elif choice == 3: #Exponential
             lambda_1, = parameters
-            results['P(X < x)'] = stats.expon.cdf(x, lambda_1)
-            results['P(X > x)'] = 1 - stats.expon.cdf(x, lambda_1)
+            results['P(X < x)'] = stats.expon.cdf(x, scale=1/lambda_1)
+            results['P(X > x)'] = 1 - stats.expon.cdf(x, scale=1/lambda_1)
         elif choice == 4: #Normal
             mean, std_dev = parameters
             results['P(X < x)'] = stats.norm.cdf(x, mean, std_dev)
@@ -135,22 +135,22 @@ def calculate_prob(distribution_type, choice, x, *parameters):
             n, p = parameters
             results['P(X = x)'] = stats.binom.pmf(x, n, p)
             results['P(X > x)'] = 1 - stats.binom.cdf(x, n, p)
-            results['P(X < x)'] = stats.binom.cdf(x - 1, n, p)
+            results['P(X < x)'] = stats.binom.cdf(x, n, p)
         elif choice == 2: #Geometric
             p, = parameters
             results['P(X = x)'] = stats.geom.pmf(x, p)
             results['P(X > x)'] = 1 - stats.geom.cdf(x, p)
-            results['P(X < x)'] = stats.geom.cdf(x - 1, p)
+            results['P(X < x)'] = stats.geom.cdf(x, p)
         elif choice == 3: #Hypergeometric
             cap_n, r, n = parameters
             results['P(X = x)'] = stats.hypergeom.pmf(x, cap_n, r, n)
             results['P(X > x)'] = 1 - stats.hypergeom.cdf(x, cap_n, r, n)
-            results['P(X < x)'] = stats.hypergeom.cdf(x - 1, cap_n, r, n)
+            results['P(X < x)'] = stats.hypergeom.cdf(x, cap_n, r, n)
         elif choice == 4: #Poisson
             lambda_2, = parameters
             results['P(X = x)'] = stats.poisson.pmf(x, lambda_2)
             results['P(X > x)'] = 1 - stats.poisson.cdf(x, lambda_2)
-            results['P(X < x)'] = stats.poisson.cdf(x - 1, lambda_2)
+            results['P(X < x)'] = stats.poisson.cdf(x, lambda_2)
     return results
 
 def main():

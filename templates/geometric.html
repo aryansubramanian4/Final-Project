@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometric Distribution</title>
+    <style>
+        label, input {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Geometric Distribution Parameters</h1>
+    <form action="{{ url_for('geometric') }}" method="post">
+        <label for="x">X value (number of trials until the first success):</label>
+        <input type="text" id="x" name="x">
+
+        <label for="p">Probability of success on each trial (p):</label>
+        <input type="text" id="p" name="p">
+
+        <input type="submit" value="Calculate">
+    </form>
+</body>
+</html>

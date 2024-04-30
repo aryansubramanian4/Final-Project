@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discrete Distributions</title>
+    <style>
+        label, select, input {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Discrete Distributions</h1>
+    <p><a href="{{ url_for('binomial', dtype='discrete', dist='binomial') }}">Binomial Distribution</a></p>
+    <p><a href="{{ url_for('geometric', dtype='discrete', dist='geometric') }}">Geometric Distribution</a></p>
+    <p><a href="{{ url_for('hypergeometric', dtype='discrete', dist='hypergeometric') }}">Hypergeometric Distribution</a></p>
+    <p><a href="{{ url_for('poisson', dtype='discrete', dist='poisson') }}">Poisson Distribution</a></p>
+</body>
+</html>

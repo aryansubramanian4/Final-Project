@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuous Distributions</title>
+    <style>
+        label, select, input {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Continuous Distributions</h1>
+    <p><a href="{{ url_for('beta', dtype='continuous', dist='beta') }}">Beta Distribution</a></p>
+    <p><a href="{{ url_for('gamma', dtype='continuous', dist='gamma') }}">Gamma Distribution</a></p>
+    <p><a href="{{ url_for('exponential', dtype='continuous', dist='exponential') }}">Exponential Distribution</a></p>
+    <p><a href="{{ url_for('normal', dtype='continuous', dist='normal') }}">Normal Distribution</a></p>
+</body>
+</html>

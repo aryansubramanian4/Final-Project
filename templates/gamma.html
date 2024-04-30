@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamma Distribution</title>
+    <style>
+        label, select, input {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gamma Distribution Parameters</h1>
+    <form action="{{ url_for('gamma') }}" method="post">
+        <label for="x">X value:</label>
+        <input type="text" id="x" name="x">
+
+        <label for="shape">Shape parameter:</label>
+        <input type="text" id="shape" name="shape">
+
+        <label for="scale">Scale parameter:</label>
+        <input type="text" id="scale" name="scale">
+
+        <input type="submit" value="Calculate">
+    </form>
+</body>
+</html>

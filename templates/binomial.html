@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binomial Distribution</title>
+    <style>
+        label, input {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Binomial Distribution Parameters</h1>
+    <form action="{{ url_for('binomial') }}" method="post">
+        <label for="x">X value (number of successes):</label>
+        <input type="text" id="x" name="x">
+
+        <label for="n">Number of trials (n):</label>
+        <input type="text" id="n" name="n">
+
+        <label for="p">Probability of success on a single trial (p):</label>
+        <input type="text" id="p" name="p">
+
+        <input type="submit" value="Calculate">
+    </form>
+</body>
+</html>

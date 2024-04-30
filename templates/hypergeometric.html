@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hypergeometric Distribution</title>
+    <style>
+        label, input {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hypergeometric Distribution Parameters</h1>
+    <form action="{{ url_for('hypergeometric') }}" method="post">
+        <label for="x">X value (number of successes in sample):</label>
+        <input type="text" id="x" name="x">
+
+        <label for="cap_n">Population size (N):</label>
+        <input type="text" id="cap_n" name="cap_n">
+
+        <label for="r">Number of successes in population (r):</label>
+        <input type="text" id="r" name="r">
+
+        <label for="n">Sample size (n):</label>
+        <input type="text" id="n" name="n">
+
+        <input type="submit" value="Calculate">
+    </form>
+</body>
+</html>
